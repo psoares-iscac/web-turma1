@@ -1,0 +1,19 @@
+
+
+#nav-main{
+    text-align: right;
+}
+
+.nav-link{
+    padding: .5rem .4rem .3rem .4rem;
+    color: rgb(30, 80, 30);
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    background-color: yellow;
+}
+
+.nav-link.activo{
+    border-bottom: 1px solid rgb(30, 80, 30);
+}
