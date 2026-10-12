@@ -1,11 +1,3 @@
-/* =========================================================
-   ESTILOS DO SITE "SISTEMA SOLAR"
-   Abordagem: MOBILE FIRST
-   -> Escrevemos primeiro os estilos para ecrãs pequenos.
-   -> Depois, com @media (min-width: ...), acrescentamos
-      ajustes para ecrãs maiores.
-   (Esta é exatamente a lógica do Tailwind: md:, lg:, ...)
-   ========================================================= */
 
 
 /* ---------- 1. VARIÁVEIS (cores, espaçamentos) ----------
