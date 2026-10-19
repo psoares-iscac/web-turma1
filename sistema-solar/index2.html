@@ -7,6 +7,17 @@
   <title>Sistema Solar | Início</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="css/sistemasolar.css">
+  <style type="text/tailwindcss">
+    @utility cartao{
+      @apply flex flex-col border border-(--cor-borda) rounded-(--raio) overflow-hidden
+          hover:-translate-y-4 duration-1000 ;
+    }
+
+    @utility cartao__corpo{
+      @apply p-4 bg-(--cor-superficie) flex flex-col h-full ;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -25,6 +36,10 @@
       </nav>
     </div>
   </header>
+
+  <div id="form-contacto" class="w-[400px] h-[200px] bg-yellow-200 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+    <div class="text-3xl">Formulário de Contacto</div>
+  </div>
 
   <main class="">
 
@@ -53,8 +68,8 @@
     </section>
 
     <!-- ===== LISTA DE PLANETAS (CARTÕES) ===== -->
-    <section id="planetas" class="seccao bg-black text-white">
-      <div class="w-full max-w-6xl mx-auto">
+    <section id="planetas" class="seccao ">
+      <div class="w-full max-w-6xl mx-auto p-8">
         <h2 class="text-center">Quatro planetas em destaque</h2>
         <p class="mx-auto my-8 max-w-[32rem] text-center text-[var(--cor-texto-suave)]">
           Dois planetas rochosos e dois gigantes gasosos.
@@ -62,14 +77,14 @@
         </p>
 
         <!-- Grelha de cartões: 1 coluna no telemóvel, 2 no tablet, 4 no computador -->
-        <div class="grelha-cartoes grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="p-4 grelha-cartoes grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
 
           <article class="cartao">
             <img src="img/terra.svg" alt="Ilustração do planeta Terra" class="cartao__imagem" width="300" height="300">
             <div class="cartao__corpo">
-              <h3>Terra</h3>
-              <p>O único planeta conhecido com vida. Cerca de 71% da superfície está coberta por água.</p>
-              <a href="https://science.nasa.gov/earth/" target="_blank" rel="noopener" class="cartao__link">Saber mais na NASA ↗</a>
+              <h3 class="text-white font-bold text-2xl">Terra</h3>
+              <p class="text-(--cor-texto-suave) my-4">O único planeta conhecido com vida. Cerca de 71% da superfície está coberta por água.</p>
+              <a href="https://science.nasa.gov/earth/" target="_blank" rel="noopener" class="mt-auto cartao__link">Saber mais na NASA ↗</a>
             </div>
           </article>
 
@@ -88,86 +103,34 @@
               width="400" height="400"
               loading="lazy">
             <div class="cartao__corpo">
-              <h3>Marte</h3>
-              <p>O planeta vermelho. Tem o maior vulcão do Sistema Solar: o Olympus Mons.</p>
+              <h3 class="text-white font-bold text-2xl">Marte</h3>
+              <p class="text-(--cor-texto-suave) my-4">O planeta vermelho. Tem o maior vulcão do Sistema Solar: o Olympus Mons.</p>
               <!-- Link interno para a segunda página -->
-              <a href="marte.html" class="cartao__link">Ver página de Marte →</a>
+              <a href="marte.html" class="mt-auto cartao__link">Ver página de Marte →</a>
             </div>
           </article>
 
           <article class="cartao">
             <img src="img/jupiter.svg" alt="Ilustração de Júpiter com riscas e a Grande Mancha Vermelha" class="cartao__imagem" width="300" height="300">
             <div class="cartao__corpo">
-              <h3>Júpiter</h3>
-              <p>O maior planeta. Caberiam lá dentro mais de 1300 Terras.</p>
-              <a href="https://science.nasa.gov/jupiter/" target="_blank" rel="noopener" class="cartao__link">Saber mais na NASA ↗</a>
+              <h3 class="text-white font-bold text-2xl">Júpiter</h3>
+              <p class="text-(--cor-texto-suave) my-4">O maior planeta. Caberiam lá dentro mais de 1300 Terras.</p>
+              <a href="https://science.nasa.gov/jupiter/" target="_blank" rel="noopener" class="mt-auto cartao__link">Saber mais na NASA ↗</a>
             </div>
           </article>
 
           <article class="cartao">
             <img src="img/saturno.svg" alt="Ilustração de Saturno com os seus anéis" class="cartao__imagem" width="300" height="300">
             <div class="cartao__corpo">
-              <h3>Saturno</h3>
-              <p>Famoso pelos anéis, feitos de gelo e rocha. É tão pouco denso que flutuaria em água.</p>
-              <a href="https://science.nasa.gov/saturn/" target="_blank" rel="noopener" class="cartao__link">Saber mais na NASA ↗</a>
+              <h3 class="text-white font-bold text-2xl">Saturno</h3>
+              <p class="text-(--cor-texto-suave) my-4">Famoso pelos anéis, feitos de gelo e rocha. É tão pouco denso que flutuaria em água.</p>
+              <a href="https://science.nasa.gov/saturn/" target="_blank" rel="noopener" class="mt-auto cartao__link">Saber mais na NASA ↗</a>
             </div>
           </article>
 
         </div>
 
-        <!-- Grelha de cartões: 1 coluna no telemóvel, 2 no tablet, 4 no computador -->
-        <div class="grelha-cartoes flex ">
-
-          <article class="cartao">
-            <img src="img/terra.svg" alt="Ilustração do planeta Terra" class="cartao__imagem" width="300" height="300">
-            <div class="cartao__corpo">
-              <h3>Terra</h3>
-              <p>O único planeta conhecido com vida. Cerca de 71% da superfície está coberta por água.</p>
-              <a href="https://science.nasa.gov/earth/" target="_blank" rel="noopener" class="cartao__link">Saber mais na NASA ↗</a>
-            </div>
-          </article>
-
-          <article class="cartao">
-            <!-- Fotografia real (JPG) em vez de ilustração (SVG).
-                 srcset: lista de versões da mesma imagem e a respetiva largura (w).
-                 sizes: largura que a imagem vai ocupar no ecrã.
-                 O browser escolhe o ficheiro mais leve que chegue para a qualidade. -->
-            <img
-              src="img/marte-osiris-400.jpg"
-              srcset="img/marte-osiris-400.jpg 400w,
-                      img/marte-osiris-800.jpg 800w"
-              sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-              alt="Fotografia de Marte tirada pela sonda Rosetta, com o planeta alaranjado sobre fundo negro"
-              class="cartao__imagem cartao__imagem--foto"
-              width="400" height="400"
-              loading="lazy">
-            <div class="cartao__corpo">
-              <h3>Marte</h3>
-              <p>O planeta vermelho. Tem o maior vulcão do Sistema Solar: o Olympus Mons.</p>
-              <!-- Link interno para a segunda página -->
-              <a href="marte.html" class="cartao__link">Ver página de Marte →</a>
-            </div>
-          </article>
-
-          <article class="cartao">
-            <img src="img/jupiter.svg" alt="Ilustração de Júpiter com riscas e a Grande Mancha Vermelha" class="cartao__imagem" width="300" height="300">
-            <div class="cartao__corpo">
-              <h3>Júpiter</h3>
-              <p>O maior planeta. Caberiam lá dentro mais de 1300 Terras.</p>
-              <a href="https://science.nasa.gov/jupiter/" target="_blank" rel="noopener" class="cartao__link">Saber mais na NASA ↗</a>
-            </div>
-          </article>
-
-          <article class="cartao">
-            <img src="img/saturno.svg" alt="Ilustração de Saturno com os seus anéis" class="cartao__imagem" width="300" height="300">
-            <div class="cartao__corpo">
-              <h3>Saturno</h3>
-              <p>Famoso pelos anéis, feitos de gelo e rocha. É tão pouco denso que flutuaria em água.</p>
-              <a href="https://science.nasa.gov/saturn/" target="_blank" rel="noopener" class="cartao__link">Saber mais na NASA ↗</a>
-            </div>
-          </article>
-
-        </div>
+        
       </div>
     </section>
 
