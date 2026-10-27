@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    
+
+<div class="w-full max-w-4xl mx-auto mt-16 border p-8">
+    <p class="text-3xl mb-4">Formulário de XXX</p>
+
+    <form action="#" method="get">
+
+    <div class="flex flex-col">
+        <label for="nome">Nome Próprio *</label>
+        <input class="peer p-2 border" type="text" name="nome" id="nome"
+            required minlength="5"
+            placeholder="Introduza o seu nome"
+        >
+        <small class="invisible peer-user-invalid:visible  text-red-600">Mínimo de 5 carateres.</small>
+    </div>
+
+
+    <div class="w-full sm:w-1/2 flex flex-col">
+        <label for="">Seleciona a tua sessão</label>
+        <select name="sessao" id="sessao" required 
+        class="border p-2">
+            <option value="">-- seleciona a tua sessão --</option>
+            <option value="1">Sessão 1</option>
+            <option value="2">Sessão 2</option>
+        </select>
+    </div>
+
+
+    <div class="mt-4 ">
+        <p class="mb-2">Já usaste um telescópio *</p>
+        
+        <div class="flex gap-8">
+            <label class="cursor-pointer px-4 py-2 
+                border border-gray-100 hover:border-rose-500 rounded
+                has-checked:border-rose-500">
+                <input type="radio" name="tele" id="tele1" value="nunca" checked>&nbsp;Nunca
+            </label>
+           <label class="cursor-pointer px-4 py-2 
+                border border-gray-100 hover:border-rose-500 rounded
+                has-checked:border-rose-500">
+                <input type="radio" name="tele" id="tele2" value="algumas">&nbsp;Algumas vezes
+            </label>
+            <label class="cursor-pointer px-4 py-2 
+                border border-gray-100 hover:border-rose-500 rounded
+                has-checked:border-rose-500">
+                <input type="radio" name="tele" id="tele3" value="proprio">&nbsp;Tenho o meu próprio
+            </label>
+        </div>
+
+         <div class="flex gap-8">
+            <label class="cursor-pointer px-4 py-2 
+                border border-gray-100 hover:border-rose-500 rounded
+                has-checked:border-rose-500">
+                <input type="checkbox" name="chk1" id="chk1" value="nunca">&nbsp;Nunca
+            </label>
+           <label class="cursor-pointer px-4 py-2 
+                border border-gray-100 hover:border-rose-500 rounded
+                has-checked:border-rose-500">
+                <input type="checkbox" name="chk2" id="chk2" value="algumas">&nbsp;Algumas vezes
+            </label>
+            <label class="cursor-pointer px-4 py-2 
+                border border-gray-100 hover:border-rose-500 rounded
+                has-checked:border-rose-500">
+                <input type="checkbox" name="chk3" id="chk3" value="proprio">&nbsp;Tenho o meu próprio
+            </label>
+        </div>
+
+    </div>
+
+
+    <div class="mt-4">
+        <button class="rounded px-6 py-3 bg-orange-500 
+        text-white font-semibold shadow-sm cursor-pointer
+        hover:bg-orange-800 hover:scale-95 transition-colors duration-200" 
+        type="submit">Enviar Dados</button>
+    </div>
+
+    </form>
+
+
+
+</div>
+
+
+
+</body>
+</html>
