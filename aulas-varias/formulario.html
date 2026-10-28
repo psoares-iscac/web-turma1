@@ -20,7 +20,44 @@
             required minlength="5"
             placeholder="Introduza o seu nome"
         >
-        <small class="invisible peer-user-invalid:visible  text-red-600">Mínimo de 5 carateres.</small>
+        <small class=" invisible peer-user-invalid:visible  text-red-600">Mínimo de 5 carateres.</small>
+    </div>
+
+
+
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="flex flex-col">
+            <label for="email">Email</label>
+            <input class="peer p-2 border" type="email" name="email" id="email"
+                placeholder="ex: nome@exemplo.com">
+            <small class=" invisible peer-user-invalid:visible  text-red-600">Formato inválido.</small>
+        </div>
+        
+        <div class="flex flex-col">
+            <label for="telele">Telefone</label>
+            <input class="peer p-2 border" type="tel" name="telele" id="telele" 
+            pattern="(9[1236][0-9]{7}|2[0-9]{8})">
+            <small class=" invisible peer-user-invalid:visible  text-red-600">Formato inválido.</small>
+        </div>
+
+        <div class="flex flex-col">
+            <label for="data-nascimento">Data Nascimento</label>
+            <input class="peer p-2 border" type="date" name="dataNascimento" id="data-nascimento" 
+                min="2026-10-27"
+                >
+            <small class=" invisible peer-user-invalid:visible  text-red-600">Formato inválido.</small>
+        </div>
+
+        <div class="flex flex-col">
+            <label for="cp">Código Postal</label>
+            <input class="peer p-2 border" type="text" name="cp" id="cp" 
+            pattern="([0-9]{4}-[0-9]{3})" autocomplete="postal-code" placeholder="1234-567"
+            inputmode="numeric"
+            >
+            <small class=" invisible peer-user-invalid:visible  text-red-600">Formato inválido.</small>
+        </div>
+
     </div>
 
 
@@ -42,7 +79,9 @@
             <label class="cursor-pointer px-4 py-2 
                 border border-gray-100 hover:border-rose-500 rounded
                 has-checked:border-rose-500">
-                <input type="radio" name="tele" id="tele1" value="nunca" checked>&nbsp;Nunca
+                <input class="appearance-none h-5 w-5 rounded border-2
+                 border-gray-400
+         checked:bg-blue-600 checked:border-blue-600 cursor-pointer" type="radio" name="tele" id="tele1" value="nunca" checked>&nbsp;Nunca
             </label>
            <label class="cursor-pointer px-4 py-2 
                 border border-gray-100 hover:border-rose-500 rounded
