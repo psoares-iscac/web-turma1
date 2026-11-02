@@ -185,6 +185,26 @@
       </div>
     </footer>
 
-    <script></script>
+    <script>
+      const caixaPassword = document.getElementById("password");
+      const btnMostrar = document.getElementById("mostrar-password");
+
+      // capturar clicks no mostrar
+      btnMostrar.addEventListener("click", function () {
+        // () =>   {}
+
+        const mostrar = caixaPassword.getAttribute("type") == "password";
+
+        if (mostrar) {
+          caixaPassword.setAttribute("type", "text");
+          btnMostrar.textContent = "Esconder";
+        } else {
+          caixaPassword.setAttribute("type", "password");
+          btnMostrar.textContent = "Mostrar";
+        }
+
+        caixaPassword.focus();
+      });
+    </script>
   </body>
 </html>
