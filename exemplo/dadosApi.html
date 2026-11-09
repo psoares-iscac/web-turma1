@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Locais · Aragem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  </head>
+  <body>
+    <div class="mx-auto w-[300px] border">
+      <p>Praia do Guincho</p>
+      <p>Temperatura atual <span id="temperatura"></span>ºC</p>
+    </div>
+
+    <script>
+      const url =
+        "https://api.open-meteo.com/v1/forecast" +
+        "?latitude=38.73&longitude=-9.47" +
+        "&current=temperature_2m,wind_speed_10m" +
+        "&timezone=Europe%2FLisbon";
+
+      async function obterDados() {
+        const resposta = await fetch(url);
+        const dados = await resposta.json();
+
+        // alterar na página
+        const el = document.getElementById("temperatura");
+        el.textContent = dados.current.temperature_2m;
+
+        console.log(dados);
+      }
+
+      obterDados();
+    </script>
+  </body>
+</html>
